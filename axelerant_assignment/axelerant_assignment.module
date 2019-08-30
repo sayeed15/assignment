@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains axelerant_assignment.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function axelerant_assignment_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the axelerant_assignment module.
+    case 'help.page.axelerant_assignment':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Axelerant technical assignment') . '</p>';
+      return $output;
+
+    default:
+  }
+}

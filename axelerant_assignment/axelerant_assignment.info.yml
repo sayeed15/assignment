@@ -1,0 +1,5 @@
+name: 'Axelerant assignment'
+type: module
+description: 'Axelerant technical assignment'
+core: 8.x
+package: 'Custom'

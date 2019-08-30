@@ -1,0 +1,5 @@
+services:
+  axelerant_assignment.route_subscriber:
+    class: Drupal\axelerant_assignment\Routing\AssignmentRouteSubscriber
+    tags:
+      - { name: event_subscriber }
