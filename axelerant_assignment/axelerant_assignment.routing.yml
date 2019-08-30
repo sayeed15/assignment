@@ -6,5 +6,4 @@ axelerant_assignment.node_json_controller_json_representation:
     _title: 'Node Json Representation'
   requirements:
     _permission: 'access content'
-    site_api_key: '[a-zA-Z]+'
-    nid: '[a-zA-Z]+'
+    nid: \d+
