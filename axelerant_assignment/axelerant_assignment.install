@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * Implements hook_uninstall().
+ */
+function axelerant_assignment_uninstall() {
+  \Drupal::configFactory()->getEditable('siteapikey')->delete();
+}
