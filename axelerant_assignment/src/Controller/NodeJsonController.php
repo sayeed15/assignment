@@ -9,22 +9,28 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
  * Class NodeJsonController.
+ *
+ * Provides JSON representation of a node if API key is valid.
  */
 class NodeJsonController extends ControllerBase {
 
   /**
-   * Json_representation.
+   * Returns a JSON representation of a node.
    *
-   * @param $site_api_key site key
-   * @param $nid nid
+   * @param string $site_api_key
+   *   The site API key provided in the request.
+   * @param int $nid
+   *   The node ID.
    *
-   * @return string json response
+   * @return \Symfony\Component\HttpFoundation\JsonResponse
+   *   The JSON response containing node data or an access denied exception.
    */
   public function json_representation($site_api_key, $nid) {
     $site_api = $this->config('system.site')->get('siteapikey');
     $check_nid = \Drupal::entityQuery('node')
       ->condition('nid', $nid)
-      ->condition('type', 'page')->execute();
+      ->condition('type', 'page')
+      ->execute();
 
     if ($site_api_key != $site_api || empty($check_nid)) {
       throw new AccessDeniedHttpException();
