@@ -18,4 +18,5 @@ class AssignmentRouteSubscriber extends RouteSubscriberBase {
       $route->setDefault('_form', 'Drupal\axelerant_assignment\Form\AssignmentSiteInformationForm');
     }
   }
+
 }
